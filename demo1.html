@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <pre>
+           public String addCountry(Country c) {
+            Session session=null;
+            Transaction tx=null;
+            String msg=null;
+
+            try {
+            session=factory.openSession();
+            tx=session.beginTransaction();
+            session.persist(c);
+            tx.commit();
+
+            msg="Country Added Sucessfully..";
+            }catch(Exception e) {
+                if(tx!=null) {
+                    tx.rollback();
+                }
+
+                e.printStackTrace();
+            }finally {
+                if(session!=null) {
+                    session.close();
+                }
+            }
+            return msg;
+           }
+        </pre>
+        <audio controls>
+            <source src="audio/whitenoise.mp3">
+        </audio>
+        <hr>
+
+        <video controls>
+            <source src="video/chammak challo.mp4">
+        </video> 
+        <hr>
+
+        <iframe width="743" height="418" src="https://www.youtube.com/embed/hAYeoRFy024" 
+        title="Param Sundari - Announcement | Sidharth M | Janhvi K | Dinesh V | Tushar J | 25th July 2025" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>" 
+       
+
+        <hr>
+
+
+</body>
+</html>
